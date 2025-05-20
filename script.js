@@ -293,3 +293,35 @@ function removerVol(nome){
 // — Inicialização —
 logout();
 montarRelatorioGerais();
+// — Botão para adicionar compromisso semanal no Google Calendar —
+document.getElementById('btnAddCalendar')?.addEventListener('click', () => {
+  function getNextSunday() {
+    const today = new Date();
+    const dayOfWeek = today.getUTCDay(); // domingo = 0
+    const daysUntilSunday = (7 - dayOfWeek) % 7;
+    const nextSunday = new Date(today);
+    nextSunday.setUTCDate(today.getUTCDate() + daysUntilSunday);
+    nextSunday.setUTCHours(22, 0, 0); // 22:00 UTC = 19:00 BRT
+    nextSunday.setUTCMinutes(0, 0, 0);
+    return nextSunday;
+  }
+
+  function formatDate(date) {
+    return date.toISOString().replace(/-|:|\.\d{3}/g, '').slice(0, 15) + 'Z';
+  }
+
+  const startDate = getNextSunday();
+  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000); // duração 1h
+
+  const startStr = formatDate(startDate);
+  const endStr = formatDate(endDate);
+
+  const title = encodeURIComponent('Ministério Carrão Kids - 19h00');
+  const details = encodeURIComponent('Voluntariado na escala do Carrão Kids, todo domingo às 19h.');
+  const location = encodeURIComponent('Igreja Presbiteriana Carrão');
+  const recurrence = encodeURIComponent('RRULE:FREQ=WEEKLY;BYDAY=SU');
+
+  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startStr}/${endStr}&details=${details}&location=${location}&recur=${recurrence}&sf=true&output=xml`;
+
+  window.open(url, '_blank');
+});
