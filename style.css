@@ -11,8 +11,6 @@ body {
   background: #F0F4C3;
   color: #333;
   line-height: 1.4;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 h1, h2, h3, h4, h5 {
   font-weight: 700;
@@ -25,10 +23,15 @@ h3 { font-size: 1.4rem; margin-bottom: 8px; }
 /* ===========================
    LAYOUT CONTAINERS
    =========================== */
-.aba { display: none; padding: 20px; }
-.aba.ativa { display: block; }
+.aba {
+  display: none;
+  padding: 20px;
+}
+.aba.ativa {
+  display: block;
+}
 #login, #app {
-  width: 90%;
+  width: 100%;
   max-width: 420px;
   margin: 40px auto;
 }
@@ -38,136 +41,383 @@ h3 { font-size: 1.4rem; margin-bottom: 8px; }
    LOGIN / CADASTRO CARD
    =========================== */
 .auth-card {
-  background: #FFF;
+  background: #FFFFFF;
   border-radius: 12px;
   padding: 30px 24px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   text-align: center;
 }
-.auth-logo { width: 60px; margin-bottom: 12px; }
+.auth-logo {
+  width: 80px;
+  margin-bottom: 16px;
+}
+.auth-card h2 {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
 .auth-form label {
-  display: block; text-align: left; margin-top: 16px;
-  font-weight: 600; color: #558B2F;
+  display: block;
+  text-align: left;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #558B2F;
 }
 .auth-form label i {
-  font-size: 1rem; margin-right: 6px; color: #8BC34A;
+  margin-right: 8px;
+  color: #8BC34A;
 }
 .auth-form input,
 .auth-form select {
-  width: 100%; padding: 12px 14px; margin-top: 6px;
-  border: 2px solid #C5E1A5; border-radius: 8px;
-  font-size: 1rem; transition: border-color 0.2s;
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 6px;
+  border: 2px solid #C5E1A5;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
 }
 .auth-form input:focus,
 .auth-form select:focus {
-  border-color: #7CB342; outline: none;
+  border-color: #7CB342;
+  outline: none;
 }
 .btn-login {
-  margin-top: 24px; width: 100%;
-  background: #7CB342; color: #fff;
-  border: none; border-radius: 30px;
-  font-size: 1.1rem; padding: 14px 20px;
+  margin-top: 24px;
+  width: 100%;
+  background: #7CB342;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  padding: 12px;
   box-shadow: 0 4px 12px rgba(124,179,66,0.4);
   transition: background 0.3s, transform 0.2s;
 }
 .btn-login:hover {
-  background: #689F38; transform: translateY(-2px);
+  background: #689F38;
+  transform: translateY(-2px);
 }
 .switch-form {
-  margin-top: 16px; font-size: 0.9rem; color: #555;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #555;
 }
 .switch-form a {
-  color: #7CB342; text-decoration: none; font-weight: 600;
+  color: #7CB342;
+  text-decoration: none;
+  font-weight: 600;
 }
-.switch-form a:hover { text-decoration: underline; }
+.switch-form a:hover {
+  text-decoration: underline;
+}
 
 /* ===========================
    HEADER & NAVIGATION
    =========================== */
 header {
   background: linear-gradient(135deg, #8BC34A, #558B2F);
-  padding: 16px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 16px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin-bottom: 24px;
 }
 .header-inner {
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 header h1 {
-  color: #FFF; font-family: 'Comic Sans MS', cursive;
+  color: #FFF;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-header .logo { width: 40px; }
 #navBar {
-  display: flex; justify-content: center; gap: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
   margin-top: 12px;
 }
 #navBar button {
-  background: #CDDC39; color: #2E7D32;
-  padding: 12px 24px; border: none; border-radius: 28px;
-  font-weight: 600; cursor: pointer;
+  background: #CDDC39;
+  color: #2E7D32;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: background 0.3s, transform 0.2s;
 }
 #navBar button.active,
 #navBar button:hover {
-  background: #AFB42B; transform: translateY(-2px);
+  background: #AFB42B;
+  transform: translateY(-2px);
 }
-#navBar .logout { background: #E57373; color: #FFF; }
-#navBar .logout:hover { background: #EF5350; }
+#navBar .logout {
+  background: #E57373;
+  color: #FFF;
+}
+#navBar .logout:hover {
+  background: #EF5350;
+}
 
 /* ===========================
-   MAIN SECTIONS & TABLES
+   MAIN SECTIONS
    =========================== */
 main > section {
-  background: #FFF; border-radius: 10px;
-  padding: 16px; margin: 0 auto 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
-#tblVols th, #tblVols td {
-  padding: 12px 8px; text-align: center;
+main > section h2 {
+  margin-bottom: 16px;
+  border-bottom: 3px solid #C5E1A5;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* ===========================
+   CONTROLE DE VOLUNTÁRIOS
+   =========================== */
+#tblVols {
+  width: 100%;
+  border-collapse: collapse;
+}
+#tblVols th,
+#tblVols td {
+  padding: 12px 8px;
+  text-align: center;
   border-bottom: 1px solid #E0E0E0;
 }
 #tblVols th {
-  background: #AED581; color: #33691E; font-weight: 600;
+  background: #AED581;
+  color: #33691E;
+  font-weight: 600;
 }
-#tblVols tr:hover { background: #F1F8E9; }
+#tblVols tr:hover {
+  background: #F1F8E9;
+}
 
-/* Itens de escala pessoal */
-.escala-item {
-  margin-bottom: 10px; display: flex;
-  justify-content: space-between; align-items: center;
-  background: #f4f4f4; padding: 10px;
-  border-radius: 10px;
+/* ===========================
+   ESCALAS (VOLUNTÁRIO)
+   =========================== */
+#listaEscalas .escala-card {
+  margin-bottom: 16px;
+  background: #F9FBE7;
+  border-left: 6px solid #AED581;
+  padding: 16px;
+  border-radius: 6px;
 }
-.btn-confirmado {
-  background-color: #28a745; color: #fff;
-  border: none; padding: 5px 12px;
-  border-radius: 5px; cursor: not-allowed;
+#listaEscalas .vol-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#listaEscalas .vol-item button {
+  width: fit-content;
+}
+
+/* ===========================
+   ESCALA GERAL (ADMIN)
+   =========================== */
+#listaEscalasGerais .escala-card {
+  margin-bottom: 16px;
+}
+#listaEscalasGerais .vol-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #E8F5E9;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+#listaEscalasGerais .vol-item button {
+  margin-left: 8px;
+}
+
+/* ===========================
+   RELATÓRIOS
+   =========================== */
+#relatorios select,
+#relatoriosGerais select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #C5E1A5;
+  margin-bottom: 16px;
+}
+.barra-relatorio {
+  background: #E0E0E0;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px 0;
+  width: 100%;
+  max-width: 400px;
+}
+.barra {
+  height: 100%;
+  color: #FFF;
+  font-weight: 600;
+  line-height: 20px;
+  padding-left: 8px;
+}
+.confirm { background: #66BB6A; }
+.troc    { background: #EF5350; }
+.assm    { background: #42A5F5; }
+#relatorioResultado, #relatorioTurma {
+  background: #F9FBE7;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+#relatorioTurma pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  margin-top: 8px;
 }
 
 /* ===========================
    RESPONSIVIDADE
    =========================== */
 @media (max-width: 768px) {
-  #navBar { flex-wrap: wrap; }
-}
-@media (max-width: 480px) {
-  #login, #app {
-    width: 95%; margin: 16px auto; max-width: none;
-  }
-  .auth-form input, .auth-form select {
-    padding: 14px; font-size: 1rem;
-  }
-  button, .btn-login, #navBar button {
-    padding: 16px 24px; font-size: 1.2rem; border-radius: 30px;
+  #listaEscalas .vol-item,
+  #listaEscalasGerais .vol-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
   #navBar {
-    flex-direction: column; gap: 10px; align-items: stretch;
+    flex-wrap: wrap;
   }
-  header h1 { font-size: 1.5rem; text-align: center; flex: 1; }
-  header .logo { width: 50px; }
-  .auth-card, main > section {
-    margin: 12px auto; padding: 16px; width: 95%;
-  }
+}
+/* ===========================
+   BOTÕES GERAIS ESTILIZADOS
+   =========================== */
+
+/* Botões de ação principais */
+.btn-confirmar,
+.btn-troca,
+.btn-clear,
+.btn-transfer,
+#tblVols .btn-sm {
+  background: #fff;
+  color: #333;
+  border: 2px solid #c5e1a5;
+  border-radius: 24px;              /* Mais arredondado */
+  padding: 8px 16px;                /* Espaço interno generoso */
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Sombra suave */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* Cores por tipo */
+.btn-confirmar { background: #aed581; border-color: #9ccc65; }
+.btn-troca     { background: #81d4fa; border-color: #4fc3f7; }
+.btn-clear     { background: #ffab91; border-color: #ff8a65; }
+.btn-transfer  { background: #ce93d8; border-color: #ba68c8; }
+#tblVols .btn-sm.reset { background: #ffe082; border-color: #ffd54f; }
+#tblVols .btn-sm.remove { background: #e57373;  border-color: #ef5350; }
+
+/* Hover effects */
+.btn-confirmar:hover,
+.btn-troca:hover,
+.btn-clear:hover,
+.btn-transfer:hover,
+#tblVols .btn-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Disabled (confirmar) */
+.btn-confirmar:disabled {
+  background: #e0e0e0;
+  border-color: #bdbdbd;
+  color: #757575;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Ajuste nos ícones + spacing */
+.vol-item button i,
+#tblVols .btn-sm i {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+/* ===========================
+   AJUSTES DE TAMANHO DE LOGO
+   =========================== */
+
+/* Logo no card de login/cadastro */
+.auth-logo {
+  width: 60px;   /* antes era 80px */
+  margin-bottom: 12px;
+}
+
+/* Logo no header após login */
+header .logo {
+  width: 40px;   /* antes era 60px */
+  margin-bottom: 0;
+}
+
+/* ===========================
+   ÍCONES NO FORMULÁRIO
+   =========================== */
+
+/* Reduz tamanho dos ícones FontAwesome nos labels */
+.auth-form label i {
+  font-size: 1rem;   /* antes era padrão, agora menor */
+  margin-right: 6px;
+  color: #8BC34A;
+}
+
+/* ===========================
+   VOLUNTÁRIO – CARD DE ESCALA
+   =========================== */
+
+/* Vol-item com padding mais leve */
+#listaEscalas .vol-item {
+  padding: 12px;    /* reduzido para dar mais respiro */
+  gap: 6px;         /* espaço interno menor */
+}
+
+/* Títulos de data menores */
+#listaEscalas .escala-card h3 {
+  font-size: 1.2rem; /* antes 1.4rem */
+  margin-bottom: 8px;
+}
+
+/* Botões do voluntário levemente ajustados */
+#listaEscalas .vol-item button {
+  padding: 6px 12px;    /* menor padding */
+  font-size: 0.9rem;    /* fonte um pouco menor */
+  border-radius: 20px;  /* mesmo formato pill */
+}
+
+/* ===========================
+   GERAL – TORNAR LAYOUT MAIS LEVE
+   =========================== */
+
+/* Fundo de seção mais suave */
+main > section {
+  background: #FFFFFF;          /* mantém branco puro */
+  padding: 16px;                /* menos denso */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* sombra mais sutil */
+}
+
+/* Texto dos cards menos encorpado */
+.vol-item strong {
+  font-size: 1rem; /* antes 1.1rem */
+}
+
+/* Espaçamento geral */
+main {
+  padding: 16px 8px;  /* menos margem lateral */
 }
