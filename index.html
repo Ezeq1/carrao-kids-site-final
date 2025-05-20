@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrão Kids</title>
+  <!-- FontAwesome para ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN & CADASTRO -->
+  <section id="login" class="aba ativa">
+    <div class="card auth-card">
+      <h2>
+        <img
+          src="https://i.imgur.com/tQeu2If.png"
+          alt="Carrão Kids Logo"
+          class="auth-logo"
+        />
+      </h2>
+
+      <!-- Formulário de Login -->
+      <form id="formLogin" class="auth-form">
+        <label><i class="fas fa-user"></i> Nome completo</label>
+        <input
+          type="text"
+          id="loginNome"
+          placeholder="Seu nome"
+          required
+        />
+
+        <label><i class="fas fa-lock"></i> Senha</label>
+        <input
+          type="password"
+          id="loginSenha"
+          placeholder="Sua senha"
+          required
+        />
+
+        <button type="submit" class="btn-login">Entrar</button>
+      </form>
+
+      <p class="switch-form">
+        Ainda não é cadastrado?
+        <a href="#" id="linkParaCadastro">Cadastre-se</a>
+      </p>
+
+      <!-- Formulário de Cadastro -->
+      <form
+        id="formCadastroLogin"
+        class="auth-form"
+        style="display:none;"
+      >
+        <h3><i class="fas fa-user-plus"></i> Cadastro de Voluntário</h3>
+
+        <label><i class="fas fa-user"></i> Nome completo</label>
+        <input
+          type="text"
+          id="cadNome"
+          placeholder="Nome completo"
+          required
+        />
+
+        <label><i class="fas fa-users"></i> Turma</label>
+        <select id="cadTurma" required>
+          <option value="">Selecione</option>
+          <option value="Kids I">Kids I</option>
+          <option value="Kids II">Kids II</option>
+        </select>
+
+        <label><i class="fas fa-briefcase"></i> Função</label>
+        <select id="cadFuncao" required>
+          <option value="">Selecione</option>
+          <option value="Auxiliar">Auxiliar</option>
+          <option value="Professor">Professor</option>
+        </select>
+
+        <label><i class="fas fa-phone"></i> Contato</label>
+        <input
+          type="text"
+          id="cadContato"
+          placeholder="Telefone ou e‑mail"
+          required
+        />
+
+        <label><i class="fas fa-calendar-alt"></i> Domingos/mês</label>
+        <input
+          type="number"
+          id="cadDomingos"
+          min="1"
+          max="5"
+          required
+        />
+
+        <label><i class="fas fa-birthday-cake"></i> Data de nascimento</label>
+        <input type="date" id="cadNascimento" required />
+
+        <label><i class="fas fa-key"></i> Senha</label>
+        <input
+          type="password"
+          id="cadSenha"
+          placeholder="Senha"
+          required
+        />
+
+        <button type="submit" class="btn-login">Cadastrar</button>
+
+        <p class="switch-form">
+          Já tem cadastro?
+          <a href="#" id="linkParaLogin">Voltar ao login</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ÁREA PRINCIPAL (aparece após login) -->
+  <div id="app" style="display:none;">
+    <header>
+      <div class="header-inner">
+        <img
+          src="https://i.imgur.com/tQeu2If.png"
+          alt="Carrão Kids Logo"
+          class="logo"
+        />
+        <h1>Carrão Kids</h1>
+      </div>
+      <nav id="navBar"></nav>
+    </header>
+
+    <main>
+      <!-- Controle de Voluntários (admin) -->
+      <section id="controle" class="aba">
+        <h2>Controle de Voluntários</h2>
+        <table id="tblVols">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Turma</th>
+              <th>Função</th>
+              <th>Contato</th>
+              <th>Reset Senha</th>
+              <th>Remover</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Escalas Pessoais -->
+      <section id="escalas" class="aba">
+        <h2>Meus Domingos no Mês</h2>
+        <div id="listaEscalas"></div>
+      </section>
+
+      <!-- Escala Geral (admin) -->
+      <section id="escalasGerais" class="aba">
+        <h2>Escala Geral</h2>
+        <div id="listaEscalasGerais"></div>
+      </section>
+
+      <!-- Relatório Pessoal -->
+      <section id="relatorios" class="aba">
+        <h2>Meu Relatório</h2>
+        <div id="relatorioResultado"></div>
+      </section>
+
+      <!-- Relatórios Gerais (admin) -->
+      <section id="relatoriosGerais" class="aba">
+        <h2>Relatório por Turma</h2>
+        <select id="selTurmaRel"></select>
+        <div id="relatorioTurma"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
