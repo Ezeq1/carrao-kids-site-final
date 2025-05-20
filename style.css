@@ -12,7 +12,7 @@ body {
   color: #333;
   line-height: 1.4;
   min-height: 100vh;
-  overflow-x: hidden; /* Evita scroll horizontal em mobile */
+  overflow-x: hidden;
 }
 h1, h2, h3, h4, h5 {
   font-weight: 700;
@@ -25,13 +25,8 @@ h3 { font-size: 1.4rem; margin-bottom: 8px; }
 /* ===========================
    LAYOUT CONTAINERS
    =========================== */
-.aba {
-  display: none;
-  padding: 20px;
-}
-.aba.ativa {
-  display: block;
-}
+.aba { display: none; padding: 20px; }
+.aba.ativa { display: block; }
 #login, #app {
   width: 90%;
   max-width: 420px;
@@ -43,222 +38,136 @@ h3 { font-size: 1.4rem; margin-bottom: 8px; }
    LOGIN / CADASTRO CARD
    =========================== */
 .auth-card {
-  background: #FFFFFF;
+  background: #FFF;
   border-radius: 12px;
   padding: 30px 24px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   text-align: center;
 }
-.auth-logo {
-  width: 60px;   /* reduzido para encaixar melhor em mobile */
-  margin-bottom: 12px;
-}
-.auth-card h2 {
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
+.auth-logo { width: 60px; margin-bottom: 12px; }
 .auth-form label {
-  display: block;
-  text-align: left;
-  margin-top: 16px;
-  font-weight: 600;
-  color: #558B2F;
+  display: block; text-align: left; margin-top: 16px;
+  font-weight: 600; color: #558B2F;
 }
 .auth-form label i {
-  font-size: 1rem;
-  margin-right: 6px;
-  color: #8BC34A;
+  font-size: 1rem; margin-right: 6px; color: #8BC34A;
 }
 .auth-form input,
 .auth-form select {
-  width: 100%;
-  padding: 12px 14px; /* padding maior para toque */
-  margin-top: 6px;
-  border: 2px solid #C5E1A5;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.2s;
+  width: 100%; padding: 12px 14px; margin-top: 6px;
+  border: 2px solid #C5E1A5; border-radius: 8px;
+  font-size: 1rem; transition: border-color 0.2s;
 }
 .auth-form input:focus,
 .auth-form select:focus {
-  border-color: #7CB342;
-  outline: none;
+  border-color: #7CB342; outline: none;
 }
 .btn-login {
-  margin-top: 24px;
-  width: 100%;
-  background: #7CB342;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  padding: 14px 20px;   /* botões maiores */
+  margin-top: 24px; width: 100%;
+  background: #7CB342; color: #fff;
+  border: none; border-radius: 30px;
+  font-size: 1.1rem; padding: 14px 20px;
   box-shadow: 0 4px 12px rgba(124,179,66,0.4);
   transition: background 0.3s, transform 0.2s;
 }
 .btn-login:hover {
-  background: #689F38;
-  transform: translateY(-2px);
+  background: #689F38; transform: translateY(-2px);
 }
 .switch-form {
-  margin-top: 16px;
-  font-size: 0.9rem;
-  color: #555;
+  margin-top: 16px; font-size: 0.9rem; color: #555;
 }
 .switch-form a {
-  color: #7CB342;
-  text-decoration: none;
-  font-weight: 600;
+  color: #7CB342; text-decoration: none; font-weight: 600;
 }
-.switch-form a:hover {
-  text-decoration: underline;
-}
+.switch-form a:hover { text-decoration: underline; }
 
 /* ===========================
    HEADER & NAVIGATION
    =========================== */
 header {
   background: linear-gradient(135deg, #8BC34A, #558B2F);
-  padding: 16px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 16px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin-bottom: 24px;
 }
 .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   gap: 16px;
 }
 header h1 {
-  color: #FFF;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #FFF; font-family: 'Comic Sans MS', cursive;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-header .logo {
-  width: 40px;   /* reduzido para mobile */
-}
+header .logo { width: 40px; }
 #navBar {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+  display: flex; justify-content: center; gap: 12px;
   margin-top: 12px;
 }
 #navBar button {
-  background: #CDDC39;
-  color: #2E7D32;
-  padding: 12px 24px; /* padding aumentado para toque */
-  border: none;
-  border-radius: 28px;
-  font-weight: 600;
-  cursor: pointer;
+  background: #CDDC39; color: #2E7D32;
+  padding: 12px 24px; border: none; border-radius: 28px;
+  font-weight: 600; cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: background 0.3s, transform 0.2s;
 }
 #navBar button.active,
 #navBar button:hover {
-  background: #AFB42B;
-  transform: translateY(-2px);
+  background: #AFB42B; transform: translateY(-2px);
 }
-#navBar .logout {
-  background: #E57373;
-  color: #FFF;
-}
-#navBar .logout:hover {
-  background: #EF5350;
-}
+#navBar .logout { background: #E57373; color: #FFF; }
+#navBar .logout:hover { background: #EF5350; }
 
 /* ===========================
-   MAIN SECTIONS
+   MAIN SECTIONS & TABLES
    =========================== */
 main > section {
-  background: #FFFFFF;
-  border-radius: 10px;
-  padding: 16px; /* menos denso em mobile */
-  margin: 0 auto 24px;
+  background: #FFF; border-radius: 10px;
+  padding: 16px; margin: 0 auto 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-main > section h2 {
-  margin-bottom: 16px;
-  border-bottom: 3px solid #C5E1A5;
-  display: inline-block;
-  padding-bottom: 4px;
+#tblVols th, #tblVols td {
+  padding: 12px 8px; text-align: center;
+  border-bottom: 1px solid #E0E0E0;
+}
+#tblVols th {
+  background: #AED581; color: #33691E; font-weight: 600;
+}
+#tblVols tr:hover { background: #F1F8E9; }
+
+/* Itens de escala pessoal */
+.escala-item {
+  margin-bottom: 10px; display: flex;
+  justify-content: space-between; align-items: center;
+  background: #f4f4f4; padding: 10px;
+  border-radius: 10px;
+}
+.btn-confirmado {
+  background-color: #28a745; color: #fff;
+  border: none; padding: 5px 12px;
+  border-radius: 5px; cursor: not-allowed;
 }
 
 /* ===========================
-   TABELAS E CARDS
-   =========================== */
-/* (mantém seus estilos originais, com leves ajustes de padding para mobile) */
-#tblVols th,
-#tblVols td {
-  padding: 12px 8px;
-}
-#listaEscalas .vol-item {
-  padding: 12px;
-  gap: 6px;
-}
-#listaEscalas .vol-item button {
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  border-radius: 20px;
-}
-
-/* ===========================
-   RELATÓRIOS
-   =========================== */
-/* sem alterações adicionais além das propostas iniciais */
-
-/* ===========================
-   RESPONSIVIDADE AVANÇADA
+   RESPONSIVIDADE
    =========================== */
 @media (max-width: 768px) {
-  #listaEscalas .vol-item,
-  #listaEscalasGerais .vol-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #navBar {
-    flex-wrap: wrap;
-  }
+  #navBar { flex-wrap: wrap; }
 }
-
 @media (max-width: 480px) {
-  /* Containers mais estreitos e centralizados */
   #login, #app {
-    width: 95%;
-    margin: 16px auto;
-    max-width: none;
+    width: 95%; margin: 16px auto; max-width: none;
   }
-  .auth-card, main > section {
-    margin: 12px auto;
-    padding: 16px;
-    width: 95%;
-  }
-  /* Inputs e selects com padding extra */
   .auth-form input, .auth-form select {
-    font-size: 1rem;
-    padding: 14px;
+    padding: 14px; font-size: 1rem;
   }
-  /* Botões maiores e mais fáceis de tocar */
   button, .btn-login, #navBar button {
-    padding: 16px 24px;
-    font-size: 1.2rem;
-    border-radius: 30px;
+    padding: 16px 24px; font-size: 1.2rem; border-radius: 30px;
   }
-  /* Navbar vertical */
   #navBar {
-    flex-direction: column;
-    gap: 10px;
-    align-items: stretch;
+    flex-direction: column; gap: 10px; align-items: stretch;
   }
-  header h1 {
-    font-size: 1.5rem;
-    text-align: center;
-    flex: 1;
-  }
-  header .logo {
-    width: 50px;
+  header h1 { font-size: 1.5rem; text-align: center; flex: 1; }
+  header .logo { width: 50px; }
+  .auth-card, main > section {
+    margin: 12px auto; padding: 16px; width: 95%;
   }
 }
